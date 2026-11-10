@@ -1,0 +1,44 @@
+Ant HK only : 
+
+Pure HK works for simple quadrupeds (2–4 joints, lighter legs).
+Ant is too complex for purely emergent HK walking..
+
+
+HK+CPG+torso_stabilisation:
+
+Hybrid HK + Gait Approach (No RL) + torso_stabilisation.
+Minimal CPG + Swing/Stance Enforcement.
+High dimensionality problem.
+When one leg lifts too far, HK reaches a new local minimum (tripod stance), and the system freezes.
+We can’t increase the amplitude much without destabilizing the torso..
+If we increase the CPG amplitude too much, the robot loses balance and falls.
+Pure HK + minimal CPG works on simple quadrupeds (2–4 joints per leg, lighter bodies)..
+Ant is too heavy, too coupled, and too high-DoF for sustained pure HK locomotion..
+
+
+Approach 3 : Explicit fully scripted trajectory reinforcement:
+
+Precompute hip/knee angles over time for each leg.
+Use of predefined joint trajectories for swing and stance.
+Even with a “scripted trot” + HK, the Ant still does not walk.
+Homeokinesis alone cannot generate global gait timing, only local coordination.
+HK adjusts joint gains and biases to reduce prediction error..
+
+Summary :
+Homeokinesis cannot fix this
+
+HK:
+
+adapts local gains
+minimizes prediction error
+
+HK does NOT:
+
+plan footholds
+regulate CoM
+stabilize contact transitions
+
+So Ant collapses into: one-leg hopping attractor
+
+
+

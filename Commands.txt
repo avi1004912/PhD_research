@@ -1,0 +1,13 @@
+1. to train : python main_ant.py AntCustom-v0 PPO -t
+
+2. To view : python main_ant.py AntCustom-v0 PPO -s models_ant/PPO_ant_550k.zip
+
+
+
+For rewards (best worked): 
+
+1. To train: python main_ant_reward_average.py AntCustom-v0 -t
+
+2. To view: python main_ant_reward_average.py AntCustom-v0 -s models_ant_reward_average/PPO_ant_550k.zip
+
+
