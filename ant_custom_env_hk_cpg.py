@@ -27,7 +27,7 @@ class AntPositionHKEnv(MujocoEnv, utils.EzPickle):
         self.knee = -0.9 # knee joint amplitude
 
         # Homeokinesis
-        self.C = np.eye(8) * 0.02 # adaptive weight matrix for motor coordination
+        self.C = np.eye(8) * 0.05 # adaptive weight matrix for motor coordination #modification
         self.h = np.zeros(8) # bias term for HK
         self.lr = 1e-5  # learning rate for HK adaptation
         self.last_act = np.zeros(8) # store last motor commands for HK update
